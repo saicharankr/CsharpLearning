@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--linking style sheet from External file -->
+    <link rel="stylesheet" type="text/css" href="styles.css" media="all" />
+
+    <style type="text/css" media="all">
+        @page {
+            size: auto;
+            /* auto is the initial value */
+            margin: 10%;
+        }
+        /* h1 {
+            color: rgb(24, 24, 22);
+        }
+        
+        ul li {
+            color: rgb(252, 8, 20);
+        }
+        
+        .body {
+            color: #104aebec
+        }
+        
+        #background {
+            background-color: rgba(221, 194, 247, 0.849);
+        }
+        
+        pre {
+            color: cornflowerblue;
+            font: bold;
+            font-style: normal;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        @media screen {
+            p.bodyText {
+                font-family: verdana, arial, sans-serif;
+            }
+        }
+        
+        @media print {
+            p.bodyText {
+                font-family: georgia, times, serif;
+            }
+        }
+        
+        @media screen,
+        print {
+            p.bodyText {
+                font-size: 10pt
+            }
+        }
+         */
+    </style>
+
+    <title>CSS Tutorials</title>
+</head>
+
+<body id="background" class="body">
+    <div>
+        <h1>Chapter 1</h1>
+        <h2>CSS Syntax</h2>
+        <h3> Selector { Property : values}</h3>
+        <p>Selector Types </p>
+        <ul>
+            <li>Type Selector</li> >> Here We Apply style rules by selecting tags like h1,h3,p..etc.
+            <pre>
+                Example:-
+                h1 {
+                    color: #36CFFF; 
+                 }
+            </pre>
+            <li>Universal Selector</li> >> Its denoted by * ,Applies style to entire Document.
+            <pre>
+                Example:-
+                *{
+                    color: #36CFFF; 
+                 }
+            </pre>
+            <li>Descendant Selectors</li> >> Suppose you want to apply a style rule to a particular element only when it lies inside a particular element.
+            <pre>
+                Example:-
+                ul em {
+                    color: #36CFFF; 
+                 }
+            </pre>
+            <li>ID Selectors</li> >> define style rules based on the id attribute of the elements
+            <pre>
+                Example:-
+                #black{
+                    color: #36CFFF; 
+                 }
+            </pre>
+            <li>Class Selectors</li> >> Define style rules based on the class attribute of the elements.
+            <pre>
+            .black {
+                color: #000000; 
+             }
+            </pre>
+            <li>Attribute Selectors</li> >>You can also apply styles to HTML elements with particular attributes. The style rule below will match all the input elements having a type attribute with a value of text −
+            <pre>
+                Example:-
+                input[type = "text"] {
+                    color: #000000; 
+                 }
+            </pre>
+            <li>Child Selectors</li> >> This rule will render all the paragraphs in black if they are direct child of body element. Other paragraphs put inside other elements like div or td would not have any effect of this rule.
+            <pre>
+                Example:-
+                body > p {
+                    color: #36CFFF; 
+                 }
+            </pre>
+            <li>Grouping Selectors</li> >>You can apply a style to many selectors if you like. Just separate the selectors with a comma, as given in the following example.
+            <pre>
+                Example:-
+                h1, h2, h3 {
+                    color: #36C;
+                    font-weight: normal;
+                    letter-spacing: .4em;
+                    margin-bottom: 1em;
+                    text-transform: lowercase;
+                 }
+            </pre>
+        </ul>
+    </div>
+    <div>
+        <h1>Chapter 2</h1>
+        <h2> Various Ways of including CSS to a html</h2>
+        <ul>
+            <li>Inline</li>
+            <li>Embedded</li>
+            <li>External :-
+                <ul>
+                    <li>@import</li>
+                    <li>Link</li>
+                </ul>
+            </li>
+        </ul>
+        <h2>CSS Rules Overriding</h2>
+        <ul class="list">
+            <li>
+                <p>Any inline style sheet takes highest priority. So, it will override any rule defined in &lt;style&gt;...&lt;/style&gt; tags or rules defined in any external style sheet file.</p>
+            </li>
+            <li>
+                <p>Any rule defined in &lt;style&gt;...&lt;/style&gt; tags will override rules defined in any external style sheet file.</p>
+            </li>
+            <li>
+                <p>Any rule defined in external style sheet file takes lowest priority, and rules defined in this file will be applied only when above two rules are not applicable.</p>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <h1>Chapter 3 & Chapter 9</h1>
+        <h2>Measurement Units in CSS & testing Table Properties</h2>
+        <table cellpadding="5" cellspacing="5">
+            <tbody>
+                <tr>
+                    <th style="text-align:center;width:10%">Unit</th>
+                    <th style="text-align:center;">Description</th>
+                    <th style="text-align:center;width:30%">Example</th>
+                </tr>
+                <tr>
+                    <td>%</td>
+                    <td>Defines a measurement as a percentage relative to another value, typically an enclosing element.</td>
+                    <td>p {font-size: 16pt; line-height: 125%;}</td>
+                </tr>
+                <tr>
+                    <td>cm</td>
+                    <td style="vertical-align:middle;">Defines a measurement in centimeters.</td>
+                    <td>div {margin-bottom: 2cm;}</td>
+                </tr>
+                <tr>
+                    <td>em</td>
+                    <td>A relative measurement for the height of a font in em spaces. Because an em unit is equivalent to the size of a given font, if you assign a font to 12pt, each "em" unit would be 12pt; thus, 2em would be 24pt.</td>
+                    <td style="vertical-align:middle;">p {letter-spacing: 7em;}</td>
+                </tr>
+                <tr>
+                    <td>ex</td>
+                    <td>This value defines a measurement relative to a font's x-height. The x-height is determined by the height of the font's lowercase letter x.</td>
+                    <td style="vertical-align:middle;">p {font-size: 24pt; line-height: 3ex;}</td>
+                </tr>
+                <tr>
+                    <td>in</td>
+                    <td style="vertical-align:middle;">Defines a measurement in inches.</td>
+                    <td>p {word-spacing: .15in;}</td>
+                </tr>
+                <tr>
+                    <td>mm</td>
+                    <td style="vertical-align:middle;">Defines a measurement in millimeters.</td>
+                    <td>p {word-spacing: 15mm;}</td>
+                </tr>
+                <tr>
+                    <td>pc</td>
+                    <td>Defines a measurement in picas. A pica is equivalent to 12 points; thus, there are 6 picas per inch.</td>
+                    <td style="vertical-align:middle;">p {font-size: 20pc;}</td>
+                </tr>
+                <tr>
+                    <td>pt</td>
+                    <td>Defines a measurement in points. A point is defined as 1/72nd of an inch.</td>
+                    <td>body {font-size: 18pt;}</td>
+                </tr>
+                <tr>
+                    <td>px</td>
+                    <td>Defines a measurement in screen pixels.</td>
+                    <td>p {padding: 25px;}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="background">
+        <h1>Chapter 4</h1>
+        <h2>Applying background image to element through CSS</h2>
+    </div>
+    <div>
+        <h1>Chapter 5</h1>
+        <h2>Font Properties </h2>
+        <p class="font">Testing Font Properties</p>
+    </div>
+    <div>
+        <h1>Chapter 6</h1>
+        <h2>Text Properties</h2>
+        <p class="text">Testing All Properties provided for text</p>
+    </div>
+    <div>
+        <h1>Chapter 7</h1>
+        <h2>Testing Image Properties</h2>
+        <img class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png">
+    </div>
+    <div>
+        <h1>Chapter 8</h1>
+        <h2>Link properties </h2>
+        <a style="font-size: x-large;" class="font" href='https://just-python.blogspot.com/'>
+           Visit My blog
+        </a>
+    </div>
+    <div>
+        <h1>Chapter 10</h1>
+        <h2>CSS-Boders</h2>
+        <p style="border-width:4px; border-style:none;">
+            This is a border with none width.
+        </p>
+
+        <p style="border-width:4px; border-style:solid;">
+            This is a solid border.
+        </p>
+
+        <p style="border-width:4px; border-style:dashed;">
+            This is a dashed border.
+        </p>
+
+        <p style="border-width:4px; border-style:double;">
+            This is a double border.
+        </p>
+
+        <p style="border-width:4px; border-style:groove;">
+            This is a groove border.
+        </p>
+
+        <p style="border-width:4px; border-style:ridge">
+            This is a ridge border.
+        </p>
+
+        <p style="border-width:4px; border-style:inset;">
+            This is a inset border.
+        </p>
+
+        <p style="border-width:4px; border-style:outset;">
+            This is a outset border.
+        </p>
+
+        <p style="border-width:4px; border-style:hidden;">
+            This is a hidden border.
+        </p>
+        <p style="border-width:4px; 
+         border-top-style:solid;
+         border-bottom-style:dashed;
+         border-left-style:groove;
+         border-right-style:double;">
+            This is a a border with four different styles.
+        </p>
+
+        <p class="bordertest">is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived
+            not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+            software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
+    <div>
+        <h1>Chapter 11</h1>
+        <h2>CSS-Margin</h2>
+
+        <p style="margin-bottom: 15px; border:1px solid black;">
+            This is a paragraph with a specified bottom margin
+        </p>
+
+        <p style="margin-top: 5%; border:1px solid black;">
+            This is another paragraph with a specified top margin in percent
+        </p>
+
+        <p style="margin-left: 5%; border:1px solid black;">
+            This is another paragraph with a specified top margin in percent
+        </p>
+
+        <p style="margin-right: 5%; border:1px solid black;">
+            This is another paragraph with a specified right margin in percent
+        </p>
+    </div>
+    <div>
+        <h1>Chapter 12</h1>
+        <h2>CSS-Padding</h2>
+
+        <p style="padding-bottom: 15px; border:1px solid black;">
+            This is a paragraph with a specified bottom padding
+        </p>
+        <p style="padding-top: 5%; border:1px solid black;">
+            This is another paragraph with a specified top padding in percent
+        </p>
+
+        <p style="padding-left: 15%; border:1px solid black;">
+            This is another paragraph with a specified left padding in percent
+        </p>
+        <p style="padding-right: 5%; border:1px solid black;">
+            This is another paragraph with a specified right padding in percent
+        </p>
+    </div>
+    <div>
+        <h1>Chapter 13</h1>
+        <h2>CSS-Cursor properties</h2>
+        <p>Move the mouse over the words to see the cursor change:</p>
+
+        <div style="cursor:auto">Auto</div>
+        <div style="cursor:crosshair">Crosshair</div>
+        <div style="cursor:default">Default</div>
+
+        <div style="cursor:pointer">Pointer</div>
+        <div style="cursor:move">Move</div>
+        <div style="cursor:e-resize">e-resize</div>
+        <div style="cursor:ne-resize">ne-resize</div>
+        <div style="cursor:nw-resize">nw-resize</div>
+
+        <div style="cursor:n-resize">n-resize</div>
+        <div style="cursor:se-resize">se-resize</div>
+        <div style="cursor:sw-resize">sw-resize</div>
+        <div style="cursor:s-resize">s-resize</div>
+        <div style="cursor:w-resize">w-resize</div>
+
+        <div style="cursor:text">text</div>
+        <div style="cursor:wait">wait</div>
+        <div style="cursor:help">help</div>
+    </div>
+    <div>
+        <h1>Chapter 14</h1>
+        <h2>CSS-Outlines</h2>
+        <p>Outlines are very similar to borders, but there are few major differences as well −</p>
+        <ul>
+            <li>
+                <p>An outline does not take up space.</p>
+            </li>
+            <li>
+                <p>Outlines do not have to be rectangular.</p>
+            </li>
+            <li>
+                <p>Outline is always the same on all sides; you cannot specify different values for different sides of an element.</p>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <h1>Chapter 15</h1>
+        <h2>CSS-ScrollBars</h2>
+        <h3>Example of scroll value:</h3>
+        <p class="scroll">
+
+            What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+            specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and
+            more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+            The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now
+            use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and
+            the like).
+
+        </p>
+        <h3>Example of Auto value:- Scroll appears only when paragraph overflow</h3>
+        <p class="auto">
+            I am going to keep lot of content here just to show you how scrollbars works if there is an overflow in an element box. This provides your horizontal as well as vertical scrollbars. What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing
+            and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but
+            also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum. Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less
+            normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for
+            'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+        </p>
+    </div>
+    <h1>Chapter 16</h1>
+    <h2>Visibility</h2>
+    <table>
+        <tbody>
+            <tr>
+                <th>Sr.No.</th>
+                <th style="text-align:center;">Value &amp; Description</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>
+                    <p><b>visible</b></p>
+                    <p>The box and its contents are shown to the user.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>
+                    <p><b>hidden</b></p>
+                    <p>The box and its content are made invisible, although they still affect the layout of the page.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>
+                    <p><b>collapse</b></p>
+                    <p>This is for use only with dynamic table columns and row effects.</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        1. This paragraph should be visible in normal way.
+    </p>
+    2.
+    <p style="visibility:hidden;">
+        This paragraph should not be visible.
+    </p>
+    <p>Above at 2 there is paragraph which is not visible due to hidden Property</p>
+
+    <div>
+        <h1>Chapter 17</h1>
+        <h2>CSS-Positioning</h2>
+        <h3>Relative Positioning</h3>
+        <p>Relative Positioning changes the position of the HTML element relative to where it normally appears. So "left:20" adds 20 pixels to the element's LEFT position. You can use two values top and left along with the position property to move an HTML
+            element anywhere in the HTML document.
+        </p>
+        <ul>
+            <li>Move Left - Use a negative value for left.</li>
+            <li> Move Right - Use a positive value for left.</li>
+            <li>Move Up - Use a negative value for top.</li>
+            <li>Move Down - Use a positive value for top.</li>
+        </ul>
+        <h3>Example:-</h3>
+        <div style="position:relative; left:80px; top:2px; background-color:yellow;">
+            This div has relative positioning.
+        </div>
+
+        <h3>Absolute Positioning</h3>
+        <p>An element with position: absolute is positioned at the specified coordinates relative to your screen top-left corner.</p>
+        <ul>
+            <li>Move Left - Use a negative value for <i>left</i>.</li>
+            <li>Move Right - Use a positive value for <i>left</i>.</li>
+            <li>Move Up - Use a negative value for <i>top</i>.</li>
+            <li>Move Down - Use a positive value for <i>top</i>.</li>
+
+        </ul>
+        <h3>Example:- </h3>
+        <div style="position:absolute; left:290px; top:6900px; background-color:yellow;">
+            This div has absolute positioning.
+        </div>
+        <h3>Fixed Positioning</h3>
+        <p>Fixed positioning allows you to fix the position of an element to a particular spot on the page, regardless of scrolling. Specified coordinates will be relative to the browser window.</p>
+    </div>
+    <ul>
+        <li>Move Left - Use a negative value for <i>left</i>.</li>
+        <li>Move Right - Use a positive value for <i>left</i>.</li>
+        <li>Move Up - Use a negative value for <i>top</i>.</li>
+        <li>Move Down - Use a positive value for <i>top</i>.</li>
+    </ul>
+    <h3>Example</h3>
+    <div style="position:fixed; left:600px; top:590px; background-color: transparent;">
+        This div has fixed positioning.
+    </div>
+    <div>
+        <h1>Chapter 18</h1>
+        <h2>Layers</h2>
+        <p>The <big><b>z-index</b></big> property is used along with the position property to create an effect of layers. You can specify which element should come on top and which element should come at bottom.</p>
+        <p class="layer1">Layer 1</p>
+        <p class="layer2"> Layer 2</p>
+    </div>
+    <div>
+        <h1>Chapter 19</h1>
+        <h2>Pseudo Classes and Pseudo Elements</h2>
+        <h3>1. Pseudo Classes</h3>
+        <h4>Syntax:- selector:pseudo-class {property: value} </h4>
+        <h3>>>Examples of Pseudo Classes Are properties applied to links </h3>
+        <ul>
+            <li>a:active</li>
+            <li>a:visited</li>
+            <li>a:hover</li>
+        </ul>
+        <h3>Pseudo Elements</h3>
+        <h4>Syntax :- selector:pseudo-element {property: value}</h4>
+        <h3>>>Examples of Pseudo Elements Are properties applied to Paragraphs like </h3>
+        <ul>
+            <li>a:firstline</li>
+            <li>a:first letter</li>
+            <li>a:before</li>
+            <li>a:after</li>
+        </ul>
+        <p class="firstletter">Testing first-letter Pseudo class</p>
+    </div>
+    <div>
+        <h1>Chapter 20</h1>
+        <h2>@Rules</h2>
+        <ul>
+            <li>
+                <p>The <b>@import:</b> rule imports another style sheet into the current style sheet.</p>
+            </li>
+            <li>
+                <p>The <b>@charset</b> rule indicates the character set the style sheet uses.</p>
+            </li>
+            <li>
+                <p>The <b>@font-face</b> rule is used to exhaustively describe a font face for use in a document.</p>
+            </li>
+            <li>
+                <p>The <b>!important</b> rule indicates that a user-defined rule should take precedence over the author's style sheets.</p>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <h1>Chapter 21</h1>
+        <h2>Text Effects</h2>
+        <h2>Supported only IE 4.0 </h2>
+        <p>1. Alpha Channel Text Example:</p>
+
+        <div style="width: 357; 
+           height: 50; 
+           font-size: 30pt; 
+           font-family: Arial Black; 
+           color: blue;
+           Filter: Alpha(Opacity=60, FinishOpacity=50, Style=1, StartX=0, StartY=0, FinishX=58, FinishY=10)">
+            CSS Tutorials
+        </div>
+    </div>
+
+
+    <div>
+        <h1>Chapter 22</h1>
+        <h2>Layouts</h2>
+        <div id="level0">
+            <div id="level1">
+                <div id="level2">
+                    <div id="level3">
+                        <div id="main">
+                            Home | About us | Our Products
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fontcheck">
+        <h1>Chapter 23</h1>
+        <h2>Web Fonts</h2>
+        <h3> This is to test webfonts </h3>
+    </div>
+    <p class="vp">
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+            <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+        </a>
+    </p>
+</body>
+
+</html>
